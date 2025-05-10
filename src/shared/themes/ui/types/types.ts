@@ -45,7 +45,8 @@ export interface BoxProps extends ViewProps, ViewStyleWithColors {}
 
 export interface TextProps
   extends BaseTextProps,
-    Omit<TextStyleWithColors, 'fontFamily'> {
+    Omit<TextStyleWithColors, 'fontFamily' | 'fontSize'> {
+  fontSize?: keyof Theme['sizes'];
   fontFamily?: keyof Theme['fonts'];
 }
 

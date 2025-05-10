@@ -1,2 +1,2 @@
-export { AlertsNavigator } from './AlertsNavigator';
-export { ProfileNavigator } from './ProfileNavigator';
+export * from './SettingsNavigator';
+export * from './HomeNavigator';

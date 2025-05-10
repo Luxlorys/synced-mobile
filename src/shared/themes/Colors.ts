@@ -1,8 +1,6 @@
 export const Colors = {
   black: '#000',
-
-  black_50: 'rgba(0, 0, 0, 0.5)',
-
+  white: '#fff',
   /** BASIC */
 
   basic_100: '#FFFFFF',
@@ -113,4 +111,50 @@ export const Colors = {
   danger_transparent_48: 'rgba(255, 61, 113, 0.48)',
 
   transparent: 'transparent',
+
+  yellow_500: '#EAB308',
+
+  dark_mode: '#161A1F',
+  dark_contrast: '#1E2529',
+
+  primary_500: '#84CC16',
+  primary_500_opacity_40: 'rgba(217, 255, 133, 0.1)',
+  brand_secondary: '#D9FF85',
+  primary_disabled: '#5A772E',
+
+  light_text: '#DADADA',
+  muted_background: '#D4D4D4',
+
+  white_5_opacity: 'rgba(255, 255, 255, 0.05)',
+  white_10_opacity: 'rgba(255, 255, 255, 0.1)',
+  white_20_opacity: 'rgba(255, 255, 255, 0.2)',
+  white_40_opacity: 'rgba(255, 255, 255, 0.4)',
+  white_60_opacity: 'rgba(255, 255, 255, 0.6)',
+  white_80_opacity: 'rgba(255, 255, 255, 0.8)',
+
+  brand_orange: '#FFB14D',
+
+  success: '#2ECC71',
+  warning: '#FEB705',
+  error: '#E74C3C',
+
+  gray_100: '#FAFAFB',
+  gray_200: '#E5E5E5',
+  gray_300: '#AAAAAA',
+  gray_400: '#6E726E',
+  gray_primary: '#AEAEAE',
+  icon_gray: '#7E7E7E',
+  light_gray_background: '#F1F1F1',
+
+  dark_green_8_opacity: 'rgba(217, 255, 133, 0.08)',
+
+  red_500: '#DC2626',
+  aquamaring: '#56D9EB',
+
+  text_default: '#757575',
+
+  card_background: '#171717',
+
+  secondary_foregraund: '#525252',
+  primary_foregraoun: '#262626',
 };

@@ -1,93 +1,76 @@
 import React from 'react';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
 import { Text } from 'themes';
-import i18next from 'i18next';
 import { IconName } from 'react-native-vector-icons';
 import { Icon } from 'ui';
-import { RouteService, RouteType, Routes } from 'services';
+import { Routes } from 'services';
+import { isIOS } from 'lib';
+import { TransitionSpecs } from '@react-navigation/bottom-tabs';
 import { Tab } from './lib';
-import { AlertsNavigator, ProfileNavigator } from './tabs';
+import { HomeNavigator, SettingsNavigator } from './tabs';
 
 const titles: Record<string, string> = {
-  [Routes.ALERTS_NAVIGATOR]: i18next.t('screens.alerts'),
-  [Routes.PROFILE_NAVIGATOR]: i18next.t('screens.account'),
+  [Routes.MAIN_NAVIGATOR]: 'Home',
+  [Routes.SETTINGS_NAVIGATOR]: 'Settings',
 };
 
 const tabIcons: Record<string, IconName> = {
-  [Routes.ALERTS_NAVIGATOR]: 'alerts',
-  [Routes.PROFILE_NAVIGATOR]: 'account',
+  [Routes.MAIN_NAVIGATOR]: 'home',
+  [Routes.SETTINGS_NAVIGATOR]: 'filter',
 };
 
 export const BottomTabBarNavigator: React.FC = () => {
-  const { theme, styles } = useStyles(stylesheet);
-
-  const handleLongPress = (routeName: RouteType) => {
-    RouteService.navigate(routeName);
-  };
+  const { styles } = useStyles(stylesheet);
 
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarHideOnKeyboard: true,
-        tabBarActiveTintColor: theme.colors.basic_1000,
-        tabBarInactiveTintColor: theme.colors.black,
         headerShown: false,
+        tabBarStyle: styles.tabBarStyle,
         tabBarItemStyle: styles.tabBarItemStyle,
         lazy: true,
-        tabBarLabel: () => (
+        animation: 'fade',
+        transitionSpec: TransitionSpecs.FadeSpec,
+        tabBarLabel: ({ focused }) => (
           <Text
-            fontSize={10}
-            lineHeight={12}
-            fontWeight="500"
-            fontFamily="Medium"
-            color="black">
+            fontSize="xs"
+            fontWeight="400"
+            fontFamily="PoppinsMedium"
+            color={focused ? 'light_text' : 'icon_gray'}>
             {titles[route.name]}
           </Text>
         ),
         tabBarIcon: ({ focused }) => {
-          const iconColor = focused ? 'basic_400' : 'basic_300';
-
           return (
-            <Icon name={tabIcons[route.name]} size={22} color={iconColor} />
+            <Icon
+              name={tabIcons[route.name]}
+              size={20}
+              color={focused ? 'light_text' : 'icon_gray'}
+            />
           );
         },
       })}
-      backBehavior="history"
-      screenListeners={({ route }) => ({
-        tabLongPress: () => handleLongPress(route.name),
-      })}>
-      <Tab.Screen
-        name="ALERTS_NAVIGATOR"
-        component={AlertsNavigator}
-        options={{ headerShown: false }}
-      />
-
-      <Tab.Screen
-        name="PROFILE_NAVIGATOR"
-        component={ProfileNavigator}
-        options={{ headerShown: false }}
-      />
+      backBehavior="history">
+      <Tab.Screen name="MAIN_NAVIGATOR" component={HomeNavigator} />
+      <Tab.Screen name="SETTINGS_NAVIGATOR" component={SettingsNavigator} />
     </Tab.Navigator>
   );
 };
 
-const stylesheet = createStyleSheet(() => ({
+const stylesheet = createStyleSheet((theme, runtime) => ({
   tabBarItemStyle: {
-    height: 42,
-    marginTop: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
+    marginTop: 6,
   },
-  tabBarBadgeStyle: {
-    top: -8,
-    fontSize: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    lineHeight: 14,
-    width: 16,
-    height: 16,
-    borderRadius: 8,
-    minWidth: 0,
+  tabBarStyle: {
+    position: 'absolute',
+    bottom: isIOS ? runtime.insets.bottom : 16,
+    borderRadius: 35,
+    backgroundColor: theme.colors.dark_contrast,
+    height: 68,
+    paddingBottom: 12,
+    overflow: 'hidden',
+    borderTopWidth: 0,
+    marginHorizontal: 16,
   },
 }));

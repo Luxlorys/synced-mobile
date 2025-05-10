@@ -1,6 +1,4 @@
-/* eslint-disable react/display-name */
-/* eslint-disable react/prop-types */
-import React, { useCallback, useImperativeHandle, useRef } from 'react';
+import React, { useRef } from 'react';
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
@@ -10,76 +8,55 @@ import {
 } from 'react-native-gesture-handler';
 import Animated, {
   WithSpringConfig,
-  clamp,
   interpolate,
   interpolateColor,
   runOnJS,
   useAnimatedGestureHandler,
-  useAnimatedReaction,
   useAnimatedStyle,
   useSharedValue,
   withSpring,
 } from 'react-native-reanimated';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
+import { Box, Colors } from 'themes';
+import {
+  constructSwitchBackgroundColor,
+  constructSwitchBorderColor,
+  constructSwitchCircleColor,
+} from './helpers';
 
-const SWITCH_CONTAINER_WIDTH = 40;
-const SWITCH_CONTAINER_HEIGHT = 24;
-const CIRCLE_WIDTH = 20;
+const clamp = (value: number, lowerBound: number, upperBound: number) => {
+  'worklet';
+
+  return Math.min(Math.max(lowerBound, value), upperBound);
+};
+
+const SWITCH_CONTAINER_WIDTH = 51;
+const SWITCH_CONTAINER_HEIGHT = 31;
+const CIRCLE_WIDTH = 27;
 const BORDER = 1;
-
-const TRACK_CIRCLE_WIDTH = SWITCH_CONTAINER_WIDTH - CIRCLE_WIDTH - BORDER * 2;
+const TRACK_CIRCLE_WIDTH = SWITCH_CONTAINER_WIDTH - CIRCLE_WIDTH - BORDER * 4;
 
 const config: WithSpringConfig = {
   overshootClamping: true,
 };
 
-export interface SwitchComponentRefProps {
-  outsideAnimationStart: (value: boolean) => void;
-}
-
-export interface SwitchComponentProps {
+interface SwitchComponentProps {
   value: boolean;
-  onChange: (value: boolean) => void;
-  enabled?: boolean;
+  onChange: (newValue: boolean) => void;
+  disabled?: boolean;
 }
 
-export const Switch = React.forwardRef<
-  SwitchComponentRefProps,
-  SwitchComponentProps
->(({ value, onChange, enabled = true }, ref) => {
-  const { styles, theme } = useStyles(stylesheet);
-
+export const Switch: React.FC<SwitchComponentProps> = ({
+  value,
+  onChange,
+  disabled = false,
+}) => {
   const panRef = useRef<PanGestureHandler>(null);
 
+  const { styles } = useStyles(stylesheet);
   const translateX = useSharedValue(value ? TRACK_CIRCLE_WIDTH : 0);
 
-  const outsideAnimationStart = useCallback((newValue: boolean) => {
-    onChange(newValue);
-    translateX.value = withSpring(newValue ? TRACK_CIRCLE_WIDTH : 0, config);
-  }, []);
-
-  useAnimatedReaction(
-    () => value,
-    (currentValue, previousValue) => {
-      if (currentValue !== previousValue) {
-        translateX.value = withSpring(
-          currentValue ? TRACK_CIRCLE_WIDTH : 0,
-          config,
-        );
-      }
-    },
-    [value],
-  );
-
-  useImperativeHandle(
-    ref,
-    () => ({
-      outsideAnimationStart,
-    }),
-    [],
-  );
-
-  const onPress = ({
+  const handlePress = ({
     nativeEvent: { state },
   }: TapGestureHandlerStateChangeEvent) => {
     if (state !== State.ACTIVE) {
@@ -87,7 +64,6 @@ export const Switch = React.forwardRef<
     }
 
     onChange(!value);
-
     translateX.value = withSpring(value ? 0 : TRACK_CIRCLE_WIDTH, config);
   };
 
@@ -100,13 +76,18 @@ export const Switch = React.forwardRef<
     ),
   }));
 
-  const animatedContainerStyle = useAnimatedStyle(() => ({
-    backgroundColor: interpolateColor(
-      translateX.value,
-      [0, TRACK_CIRCLE_WIDTH],
-      [theme.colors.transparent, theme.colors.success_400],
-    ),
-  }));
+  const switchBackgroundColor =
+    Colors[constructSwitchBackgroundColor(value, disabled)];
+
+  const animatedContainerStyle = useAnimatedStyle(() => {
+    return {
+      backgroundColor: interpolateColor(
+        translateX.value,
+        [0, TRACK_CIRCLE_WIDTH],
+        [switchBackgroundColor, switchBackgroundColor],
+      ),
+    };
+  });
 
   const onGestureEvent = useAnimatedGestureHandler<
     PanGestureHandlerGestureEvent,
@@ -120,14 +101,11 @@ export const Switch = React.forwardRef<
     },
     onEnd: ({ velocityX }) => {
       const endPosition = translateX.value + 0.2 * velocityX;
-
       const isCloserToEnd =
         Math.abs(TRACK_CIRCLE_WIDTH - endPosition) < Math.abs(endPosition);
-
       const selectedSnapPoint = isCloserToEnd ? TRACK_CIRCLE_WIDTH : 0;
 
       translateX.value = withSpring(selectedSnapPoint, config);
-
       runOnJS(onChange)(selectedSnapPoint !== 0);
     },
   });
@@ -135,30 +113,43 @@ export const Switch = React.forwardRef<
   return (
     <TapGestureHandler
       waitFor={panRef}
-      onHandlerStateChange={onPress}
-      enabled={enabled}>
-      <Animated.View style={[animatedContainerStyle, styles.switchContainer]}>
-        <PanGestureHandler ref={panRef} onGestureEvent={onGestureEvent}>
-          <Animated.View
-            style={[
-              styles.circle,
-              { backgroundColor: theme.colors.basic_600 },
-              animatedStyle,
-            ]}
-          />
-        </PanGestureHandler>
-      </Animated.View>
+      onHandlerStateChange={handlePress}
+      enabled={!disabled}>
+      <Box style={styles.switchBox}>
+        <Animated.View
+          style={[
+            animatedContainerStyle,
+            styles.switchContainer(value, disabled),
+          ]}>
+          <PanGestureHandler ref={panRef} onGestureEvent={onGestureEvent}>
+            <Animated.View
+              style={[
+                styles.circle,
+                {
+                  backgroundColor:
+                    Colors[constructSwitchCircleColor(value, disabled)],
+                },
+                animatedStyle,
+              ]}
+            />
+          </PanGestureHandler>
+        </Animated.View>
+      </Box>
     </TapGestureHandler>
   );
-});
+};
 
-const stylesheet = createStyleSheet(theme => ({
-  switchContainer: {
+const stylesheet = createStyleSheet(() => ({
+  switchContainer: (value: boolean, disabled: boolean) => ({
     width: SWITCH_CONTAINER_WIDTH,
     height: SWITCH_CONTAINER_HEIGHT,
-    borderRadius: 12,
+    borderRadius: 32,
     flexDirection: 'row',
-  },
+    backgroundColor: Colors[constructSwitchBackgroundColor(value, disabled)],
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: Colors[constructSwitchBorderColor(value, disabled)],
+  }),
   circle: {
     alignSelf: 'center',
     width: CIRCLE_WIDTH,
@@ -170,6 +161,11 @@ const stylesheet = createStyleSheet(theme => ({
     paddingTop: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: theme.colors.transparent,
+    borderColor: 'transparent',
+  },
+  switchBox: {
+    gap: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 }));

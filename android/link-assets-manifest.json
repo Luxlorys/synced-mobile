@@ -2,20 +2,124 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "src/assets/fonts/DMSans-Bold.ttf",
-      "sha1": "ef47944cd61dfd6889e7f0bb7596d87849d0e6cb"
+      "path": "src/assets/fonts/Gilroy-Black.ttf",
+      "sha1": "0b660caa9cd1f39d45fce6af872df90ff0cee9d5"
     },
     {
-      "path": "src/assets/fonts/DMSans-Medium.ttf",
-      "sha1": "afe77e497ca69c2e83ade71a6acb5036393db1f1"
+      "path": "src/assets/fonts/Gilroy-Bold.ttf",
+      "sha1": "61341089559af2388f8964dd08bf3adf85e0d71a"
     },
     {
-      "path": "src/assets/fonts/DMSans-Regular.ttf",
-      "sha1": "f1cf9ed15e1ec1db951c401233655dbbd304c732"
+      "path": "src/assets/fonts/Gilroy-ExtraBold.ttf",
+      "sha1": "bab9b6efea2cc3d607ce00321fa847b864650115"
+    },
+    {
+      "path": "src/assets/fonts/Gilroy-Heavy.ttf",
+      "sha1": "fa39f390a2a42da5d500f2994da2a31fd3848715"
+    },
+    {
+      "path": "src/assets/fonts/Gilroy-Light.ttf",
+      "sha1": "55f81ac4d61f78afec7c19a9476089271e79489f"
+    },
+    {
+      "path": "src/assets/fonts/Gilroy-LightItalic.ttf",
+      "sha1": "5b7c7a2c9d49862591102248e8ae8823b7f9e4d6"
+    },
+    {
+      "path": "src/assets/fonts/Gilroy-Medium.ttf",
+      "sha1": "0b9653ec2edcfe5fc30d9abed2e421a60ef43dfa"
+    },
+    {
+      "path": "src/assets/fonts/Gilroy-Regular.ttf",
+      "sha1": "49586cfeacde96c3e680cfcd959830b66e7403bd"
+    },
+    {
+      "path": "src/assets/fonts/Gilroy-SemiBold.ttf",
+      "sha1": "cbd77a8ac331cb0eab69f7333ab684974c5f7d4d"
+    },
+    {
+      "path": "src/assets/fonts/Gilroy-Thin.ttf",
+      "sha1": "c900cc0ac61e97e430f3dc14520df3d2e7acbb08"
+    },
+    {
+      "path": "src/assets/fonts/Gilroy-UltraLight.ttf",
+      "sha1": "f21f1bdddbd39bc3010a43d72b869469cace2e1b"
+    },
+    {
+      "path": "src/assets/fonts/Inter-Bold.ttf",
+      "sha1": "48747b7a60086f97af0d373febcbd1f1bee87f17"
+    },
+    {
+      "path": "src/assets/fonts/Inter-Medium.ttf",
+      "sha1": "a418a8ba73bbcfa8c131c426ab836d78457afa9b"
+    },
+    {
+      "path": "src/assets/fonts/Inter-Regular.ttf",
+      "sha1": "7237d9cf55f177702066a28a4dde1e4c7e8ab576"
+    },
+    {
+      "path": "src/assets/fonts/Lato-Bold.ttf",
+      "sha1": "542498221d97bee5bdbccf86ee8890bf8e8005c9"
+    },
+    {
+      "path": "src/assets/fonts/Lato-Italic.ttf",
+      "sha1": "190187b720ec2f2ff2e4281237e301000e09673f"
+    },
+    {
+      "path": "src/assets/fonts/Lato-Light.ttf",
+      "sha1": "ad0d178564445a535b15d417f5b18019923d3bab"
+    },
+    {
+      "path": "src/assets/fonts/Lato-Regular.ttf",
+      "sha1": "e923c72eda5e50a87e18ff5c71e9ef4b3b6455a3"
+    },
+    {
+      "path": "src/assets/fonts/Nunito-Bold.ttf",
+      "sha1": "dea5eec0aca2aef62e3bfc625cf95f9d45b59687"
+    },
+    {
+      "path": "src/assets/fonts/Nunito-Medium.ttf",
+      "sha1": "0e3a9789daa6603bf6870c124727c3643b56574a"
+    },
+    {
+      "path": "src/assets/fonts/Nunito-Regular.ttf",
+      "sha1": "4b7236ba666cb77f00d8cb2a17696cc0dc2b2cc9"
+    },
+    {
+      "path": "src/assets/fonts/Nunito-SemiBold.ttf",
+      "sha1": "876165d70aa2e00f66737c7dd87039e2619bf2c2"
+    },
+    {
+      "path": "src/assets/fonts/Poppins-Medium.ttf",
+      "sha1": "283f21b44efbdbf276ba802be2d949a36bbc4233"
+    },
+    {
+      "path": "src/assets/fonts/Poppins-SemiBold.ttf",
+      "sha1": "8a4ace9392d06bcb7f8ea2f5169b07e4c383a90d"
+    },
+    {
+      "path": "src/assets/fonts/Rubik-Bold.ttf",
+      "sha1": "3b001cf9a3c4bf1176d915e5f154e8c712c582d7"
+    },
+    {
+      "path": "src/assets/fonts/Rubik-Medium.ttf",
+      "sha1": "c91959545dae337c923ad06bfd0ef27f94a97933"
+    },
+    {
+      "path": "src/assets/fonts/Rubik-Regular.ttf",
+      "sha1": "a7748ad21296101be2698dc585c7194ed43385ea"
+    },
+    {
+      "path": "src/assets/fonts/Rubik-SemiBold.ttf",
+      "sha1": "6c52238fe8c885c62b5a92520557066d1e1279eb"
+    },
+    {
+      "path": "src/assets/fonts/SpaceMono-Regular.ttf",
+      "sha1": "fae3a5a43b50e0408fd61e14383d94a023d332b0"
     },
     {
       "path": "src/assets/fonts/icomoon.ttf",
-      "sha1": "a9819caab15ee3f8cb8ade72ac3a858b2e330690"
+      "sha1": "4b20d2d92e901e482fac2da2b5e139138040345b"
     }
   ]
 }

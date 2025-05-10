@@ -7,12 +7,8 @@ export const AuthNavigator: React.FC = () => {
   useStatusBar({});
 
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="AUTH"
-        component={Auth}
-        options={{ headerShown: false }}
-      />
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="AUTH" component={Auth} />
     </Stack.Navigator>
   );
 };
