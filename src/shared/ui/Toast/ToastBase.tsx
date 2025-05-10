@@ -46,7 +46,7 @@ export const ToastBase: FC<ToastBaseProps> = ({ type, title }) => {
 
         <Box flex={1}>
           {!!title && (
-            <Text fontFamily="PoppinsMedium" fontSize="m" color="white">
+            <Text fontFamily="GilroyMedium" fontSize="m" color="white">
               {title}
             </Text>
           )}

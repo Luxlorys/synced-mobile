@@ -89,7 +89,7 @@ const stylesheet = createStyleSheet(theme => ({
   text: ({ variant, type, disabled }: TextStyleSheetProps) => ({
     fontSize: theme.sizes.base,
     color: Colors[constructVatiantTextColor(variant, type, disabled)],
-    fontFamily: theme.fonts.PoppinsMedium,
+    fontFamily: theme.fonts.GilroyMedium,
     fontWeight: 400,
   }),
 }));

@@ -36,7 +36,7 @@ export const BottomTabBarNavigator: React.FC = () => {
           <Text
             fontSize="xs"
             fontWeight="400"
-            fontFamily="PoppinsMedium"
+            fontFamily="GilroyMedium"
             color={focused ? 'light_text' : 'icon_gray'}>
             {titles[route.name]}
           </Text>

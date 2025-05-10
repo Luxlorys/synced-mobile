@@ -9,7 +9,7 @@ export const UpdateModal: React.FC = () => {
     <Box>
       <Text
         textAlign="center"
-        fontFamily="PoppinsMedium"
+        fontFamily="GilroyMedium"
         fontWeight="500"
         color="black">
         {t('update-modal.title')}

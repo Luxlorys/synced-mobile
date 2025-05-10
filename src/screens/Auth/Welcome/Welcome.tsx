@@ -5,7 +5,7 @@ import {
   UnistylesRuntime,
   useStyles,
 } from 'react-native-unistyles';
-import { Box } from 'themes';
+import { Box, Text } from 'themes';
 import { Button, KeyboardAwareScrollView } from 'ui';
 
 export const Welcome = () => {
@@ -14,14 +14,27 @@ export const Welcome = () => {
   return (
     <KeyboardAwareScrollView contentContainerStyle={styles.wrapper}>
       <Box
+        flex={1}
         paddingHorizontal={16}
-        paddingTop={isIOS ? UnistylesRuntime.insets.top : 16}
-        flex={3}
+        alignItems="center"
+        justifyContent="center">
+        <Text
+          fontSize="title"
+          fontWeight={600}
+          fontFamily="GilroyMedium"
+          color="dark_mode">
+          Welcome to Synced
+        </Text>
+      </Box>
+      <Box
+        paddingBottom={isIOS ? UnistylesRuntime.insets.bottom : 16}
+        paddingTop={24}
         backgroundColor="dark_mode"
-        borderBottomLeftRadius={64}
-        borderBottomRightRadius={64}
-      />
-      <Box flex={1} justifyContent="flex-end" paddingHorizontal={16}>
+        borderTopLeftRadius={36}
+        borderTopRightRadius={36}
+        alignItems="center"
+        justifyContent="center"
+        paddingHorizontal={16}>
         <Button
           title="Alredy have an account? Sign In"
           type="primary"
@@ -41,6 +54,6 @@ export const Welcome = () => {
 const stylesheet = createStyleSheet((_, runtime) => ({
   wrapper: {
     flexGrow: 1,
-    paddingBottom: isIOS ? runtime.insets.bottom : 16,
+    paddingTop: isIOS ? runtime.insets.top : 16,
   },
 }));
