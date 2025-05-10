@@ -62,7 +62,7 @@ export const UIDateTimePicker = ({
               {value ? getTimeFormat(value) : placeholder}
             </Text>
           )}
-          <Icon name="chevron_down" size={20} color="white" />
+          <Icon name="chevron-down" size={20} color="white" />
         </Box>
       </Pressable>
 

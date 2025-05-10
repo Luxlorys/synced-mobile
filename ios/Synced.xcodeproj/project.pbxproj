@@ -16,7 +16,6 @@
 		1622F96074F14490AEEB8D28 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4DEB48B47CF4A619C61504D /* Rubik-Bold.ttf */; };
 		1692402C228D4EF9BDD4E90C /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FADFFE9529724145BC097839 /* Inter-Bold.ttf */; };
 		21650A7E822145E491A9B0F7 /* Nunito-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8218DE3D81A645A2ADC29E23 /* Nunito-Medium.ttf */; };
-		38CD4FD7C5EC4AABB4B8B39C /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42EF474140A34C7593D903E9 /* icomoon.ttf */; };
 		4005A5FB06D44AB5AADD383B /* Gilroy-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A7D8489C32C45458FD0C4BC /* Gilroy-LightItalic.ttf */; };
 		4870FB1FA42043E69600E3DC /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8EB344293A54573AAC61AF6 /* Rubik-SemiBold.ttf */; };
 		4B267A37D0584CE48551D959 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75CFA0F6772840B6A053F1CC /* Poppins-SemiBold.ttf */; };
@@ -45,6 +44,7 @@
 		F57862AC2D75C81600432F7F /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F57862AB2D75C81600432F7F /* Config.xcconfig */; };
 		FD4A9FF8F7CF46B6BB67F441 /* Gilroy-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01FB53339548476EAFA2AA32 /* Gilroy-Light.ttf */; };
 		FE55D64829C44D77B325AF00 /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7568C6AF34C340B096977891 /* Gilroy-Regular.ttf */; };
+		651446FE0F74486DBFAE5F13 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9826A0722BFB4718AAE3BE04 /* icomoon.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +61,6 @@
 		2CF8DBD35CCD4588BA61413C /* Lato-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Light.ttf"; path = "../src/assets/fonts/Lato-Light.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-Synced.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Synced.debug.xcconfig"; path = "Target Support Files/Pods-Synced/Pods-Synced.debug.xcconfig"; sourceTree = "<group>"; };
 		423FECE7D6484BF89DFEB099 /* Lato-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Italic.ttf"; path = "../src/assets/fonts/Lato-Italic.ttf"; sourceTree = "<group>"; };
-		42EF474140A34C7593D903E9 /* icomoon.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = icomoon.ttf; path = ../src/assets/fonts/icomoon.ttf; sourceTree = "<group>"; };
 		42FBBCB5FEF046C79AD6C937 /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Medium.ttf"; path = "../src/assets/fonts/Gilroy-Medium.ttf"; sourceTree = "<group>"; };
 		44DFF38B1B8749F5A9748C33 /* Lato-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Bold.ttf"; path = "../src/assets/fonts/Lato-Bold.ttf"; sourceTree = "<group>"; };
 		464BF0A7CF1C42E5A11F26B8 /* Gilroy-Heavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Heavy.ttf"; path = "../src/assets/fonts/Gilroy-Heavy.ttf"; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		F57862AB2D75C81600432F7F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		F8EB344293A54573AAC61AF6 /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-SemiBold.ttf"; path = "../src/assets/fonts/Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
 		FADFFE9529724145BC097839 /* Inter-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Bold.ttf"; path = "../src/assets/fonts/Inter-Bold.ttf"; sourceTree = "<group>"; };
+		9826A0722BFB4718AAE3BE04 /* icomoon.ttf */ = {isa = PBXFileReference; name = "icomoon.ttf"; path = "../src/assets/fonts/icomoon.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +199,7 @@
 				268C2011C1CA430FBBA8102F /* Rubik-Regular.ttf */,
 				F8EB344293A54573AAC61AF6 /* Rubik-SemiBold.ttf */,
 				755A661EC6A54C818BCDA506 /* SpaceMono-Regular.ttf */,
-				42EF474140A34C7593D903E9 /* icomoon.ttf */,
+				9826A0722BFB4718AAE3BE04 /* icomoon.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -309,7 +309,7 @@
 				855D0AAE4B954D23891B0CC3 /* Rubik-Regular.ttf in Resources */,
 				4870FB1FA42043E69600E3DC /* Rubik-SemiBold.ttf in Resources */,
 				EED5B29E941D444BAF21CCFF /* SpaceMono-Regular.ttf in Resources */,
-				38CD4FD7C5EC4AABB4B8B39C /* icomoon.ttf in Resources */,
+				651446FE0F74486DBFAE5F13 /* icomoon.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

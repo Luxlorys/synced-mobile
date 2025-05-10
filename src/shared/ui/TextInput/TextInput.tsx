@@ -3,6 +3,7 @@ import { TextInput as BaseTextInput, TextInputProps } from 'react-native';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
 import { Box, Colors, Text, TouchableOpacity } from 'themes';
 import { Icon } from 'ui';
+import { IconName } from 'assets/resources/selection.json';
 import {
   constructBorderColor,
   constructHeight,
@@ -15,7 +16,7 @@ export interface Props extends TextInputProps {
   marginBottom?: number;
   marginTop?: number;
   borderRadius?: number;
-  rightIconName?: string;
+  rightIconName?: IconName;
   rightIconSize?: number;
   rightIconColor?: keyof typeof Colors;
   onRightPress?: () => void;

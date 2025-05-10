@@ -11,10 +11,10 @@ interface ToastBaseProps {
 }
 
 const iconNames: Record<ToastTypes, IconName> = {
-  success: 'done',
+  success: 'all-done',
   danger: 'close',
-  warning: 'alert',
-  info: 'alert',
+  warning: 'alert-triangle',
+  info: 'alert-triangle',
 };
 
 const iconColors: Record<ToastTypes, keyof typeof Colors> = {
