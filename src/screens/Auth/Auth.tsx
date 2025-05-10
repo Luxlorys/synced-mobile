@@ -1,13 +1,12 @@
 import React from 'react';
-import { Box } from 'themes';
-import { AnimatedActivityIndicator } from 'ui';
+import { Box, Text } from 'themes';
 import { AuthWrapper } from 'widgets';
 
 export const Auth: React.FC = () => {
   return (
     <AuthWrapper>
       <Box flex={1} justifyContent="center" alignItems="center">
-        <AnimatedActivityIndicator />
+        <Text>Synced App</Text>
       </Box>
     </AuthWrapper>
   );
