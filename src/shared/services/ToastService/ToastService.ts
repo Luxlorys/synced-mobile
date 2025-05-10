@@ -1,72 +1,44 @@
-import { toast } from 'sonner-native';
-import { DefaultTheme } from 'themes';
-import { ViewStyle } from 'react-native';
+import Toast, { ToastPosition } from 'react-native-toast-message';
+// eslint-disable-next-line
+import { isIOS } from 'lib';
+import { UnistylesRuntime } from 'react-native-unistyles';
+
+type TypeProps = 'success' | 'danger' | 'warning';
 
 interface ToastParams {
-  position?: 'top-center' | 'bottom-center';
+  type?: TypeProps;
+  position?: ToastPosition;
   title: string;
   description?: string;
 }
 
-const style: ViewStyle = {
-  shadowOffset: {
-    height: 1,
-    width: 2,
-  },
-  shadowOpacity: 0.2,
-  elevation: 5,
-  borderRadius: 22,
-  shadowColor: DefaultTheme.colors.basic_100,
-};
+const onBase = ({ title, description, type, position }: ToastParams) => {
+  const offset = isIOS ? UnistylesRuntime.insets.top : 32;
 
-const duration = 3500;
-
-const onSuccess = ({ position, title, description }: ToastParams) => {
-  toast.success(title, {
-    position,
-    description,
-    style,
-    styles: {
-      title: {
-        fontFamily: DefaultTheme.fonts.Regular,
-      },
-    },
-    duration,
-    closeButton: true,
+  Toast?.show({
+    text1: title,
+    text2: description || '',
+    type,
+    position: position || 'top',
+    autoHide: true,
+    topOffset: offset,
+    visibilityTime: 3000,
   });
 };
 
-const onDanger = ({ position, title, description }: ToastParams) => {
-  toast.error(title, {
-    position,
-    description,
-    style,
-    styles: {
-      title: {
-        fontFamily: DefaultTheme.fonts.Regular,
-      },
-    },
-    duration,
-    closeButton: true,
-  });
+const onSuccess = (params: ToastParams) => {
+  onBase({ ...params, type: 'success' });
 };
 
-const onWarning = ({ position, title, description }: ToastParams) => {
-  toast.warning(title, {
-    position,
-    description,
-    style,
-    styles: {
-      title: {
-        fontFamily: DefaultTheme.fonts.Regular,
-      },
-    },
-    duration,
-    closeButton: true,
-  });
+const onDanger = (params: ToastParams) => {
+  onBase({ ...params, type: 'danger' });
 };
 
-const onHide = () => toast.dismiss();
+const onWarning = (params: ToastParams) => {
+  onBase({ ...params, type: 'warning' });
+};
+
+const onHide = () => Toast.hide();
 
 export const ToastService = {
   onSuccess,

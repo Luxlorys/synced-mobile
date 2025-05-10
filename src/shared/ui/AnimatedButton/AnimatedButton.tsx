@@ -115,6 +115,6 @@ const stylesheet = createStyleSheet(theme => ({
     fontSize: 19,
     lineHeight: 24,
     fontWeight: '400',
-    fontFamily: theme.fonts.Regular,
+    fontFamily: theme.fonts.PoppinsMedium,
   },
 }));

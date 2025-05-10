@@ -1,7 +1,8 @@
-export interface State {
-  token: string;
-}
+import { Authentication, AuthResponse, User } from 'api';
 
-export interface AuthStore extends State {
-  setToken: (token: string) => void;
+export interface AuthState extends AuthResponse {}
+
+export interface AuthStore extends AuthState {
+  setToken: (token: Authentication) => void;
+  setUser: (user: User) => void;
 }

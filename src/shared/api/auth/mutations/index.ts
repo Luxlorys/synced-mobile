@@ -1,2 +1,2 @@
-export * from './useGetUserAsMutation.auth';
-export * from './useDeleteUser.auth';
+export * from './useSignIn.auth';
+export * from './useSignUp.auth';

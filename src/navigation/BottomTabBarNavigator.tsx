@@ -36,10 +36,10 @@ export const BottomTabBarNavigator: React.FC = () => {
         lazy: true,
         tabBarLabel: () => (
           <Text
-            fontSize={10}
+            fontSize="s"
             lineHeight={12}
             fontWeight="500"
-            fontFamily="Medium"
+            fontFamily="PoppinsMedium"
             color="black">
             {titles[route.name]}
           </Text>

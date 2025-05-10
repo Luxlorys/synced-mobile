@@ -115,7 +115,7 @@ const stylesheet = createStyleSheet(theme => ({
     borderColor: theme.colors.basic_500,
     borderWidth: 1,
     fontSize: 16,
-    fontFamily: theme.fonts.Regular,
+    fontFamily: theme.fonts.PoppinsMedium,
     color: theme.colors.black,
     height: 48,
     paddingLeft: constructPaddingLeft({ isLeftIconShown }),

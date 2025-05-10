@@ -236,9 +236,8 @@ module.exports = {
           },
           {
             from: ['stores'],
-            allow: ['types'],
+            allow: ['types', 'api'],
             disallow: [
-              'api',
               'hooks',
               'lib',
               'services',

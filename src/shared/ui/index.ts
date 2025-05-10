@@ -11,3 +11,4 @@ export * from './Switch';
 export * from './Tooltip';
 export * from './AnimatedButton';
 export * from './BottomSheetModal';
+export * from './Toast';

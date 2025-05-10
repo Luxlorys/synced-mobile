@@ -1,84 +1,21 @@
 import { createApi } from 'api/createApi';
 import { baseQuery } from '../baseQuery';
-import { CreateAccountResponse, Test } from './models';
+import { AuthResponse, SignInRequest, SignUpRequest } from './models';
 
 export const AuthService = createApi({
   baseQuery,
   endpoints: builder => ({
-    getUser: builder.get<CreateAccountResponse[], Test>({
-      query: ({ token }) => ({
-        url: `/v2/customer/`,
-        params: {
-          test: 'test12',
-        },
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+    signIn: builder.post<AuthResponse, SignInRequest>({
+      query: data => ({
+        url: '/auth/sign-in',
+        data,
       }),
-      disableGlobalErrorHandler: true,
     }),
-    getUserPrefetch: builder.getAsPrefetch<CreateAccountResponse, Test>({
-      query: ({ token }) => ({
-        url: `/v2/customer/`,
-        params: {
-          test: 'test12',
-        },
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+    signUp: builder.post<AuthResponse, SignUpRequest>({
+      query: data => ({
+        url: '/auth/sign-up',
+        data,
       }),
-      disableGlobalErrorHandler: true,
-    }),
-    getUserPaginate: builder.paginate<CreateAccountResponse, Test>({
-      query: ({ token }) => ({
-        url: `/v2/customer/`,
-        params: {
-          test: 'test12',
-        },
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }),
-      disableGlobalErrorHandler: true,
-    }),
-    getUserPrefetchPaginate: builder.paginateAsPrefetch<
-      CreateAccountResponse,
-      Test
-    >({
-      query: ({ token }) => ({
-        url: `/v2/customer/`,
-        params: {
-          test: 'test12',
-        },
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }),
-      disableGlobalErrorHandler: true,
-    }),
-    getUserAsMutation: builder.getAsMutation<CreateAccountResponse, Test>({
-      query: ({ token }) => ({
-        url: `/v2/customer/`,
-        params: {
-          test: 'test12',
-        },
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }),
-      disableGlobalErrorHandler: true,
-    }),
-    deleteUser: builder.delete<CreateAccountResponse, Test>({
-      query: ({ token }) => ({
-        url: `/v2/customer/`,
-        params: {
-          test: 'test12',
-        },
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }),
-      disableGlobalErrorHandler: true,
     }),
   }),
 });

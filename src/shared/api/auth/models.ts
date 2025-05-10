@@ -1,40 +1,44 @@
-export interface CreateAccountRequest {
-  firstName: string;
-  lastName: string;
+export type UserRole = 'Admin' | 'Participant';
+
+export interface CompanyInfo {
+  name: string;
+  size: number;
+}
+
+export interface CompanyInfoExtended extends CompanyInfo {
+  identifier: string;
+}
+
+export interface SignUpRequest {
+  email: string;
   password: string;
-  email: string;
-  phoneNumber: string;
+  fullName: string;
+  role: UserRole;
+  company?: CompanyInfo;
+  identifier?: string;
 }
 
-export interface CreateAccountResponse {
-  firstName: string;
-  lastName: string;
+export interface SignInRequest {
+  email: string;
   password: string;
-  email: string;
-  phoneNumber: string;
-  userId: number;
 }
 
-export interface GetUserResponse {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phoneNumber: string;
-  userId: number;
+export interface Authentication {
+  accessToken: string;
+  refreshToken: string;
 }
-
-export interface GetUserRequest {
-  id: number;
-}
-
-export interface UserResponse {}
 
 export interface User {
-  test: string;
+  id: number;
+  createdAt: string;
+  lastUpdated: string | null;
+  email: string;
+  fullName: string;
+  role: UserRole;
+  company: CompanyInfoExtended;
 }
 
-export interface Test {
-  test: string;
-  pageParam: string | number | unknown;
-  token: string;
+export interface AuthResponse {
+  authentication: Authentication;
+  user: User;
 }

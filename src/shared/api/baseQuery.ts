@@ -6,9 +6,11 @@ import { createAxiosClient } from './http-client';
 export const baseQuery = createAxiosClient({
   baseURL: Config.API_URL || '',
   getToken: () => {
-    const { token } = useAuthStore.getState();
+    const {
+      authentication: { accessToken },
+    } = useAuthStore.getState();
 
-    return token;
+    return accessToken;
   },
   onError: error => {
     ToastService.onDanger({

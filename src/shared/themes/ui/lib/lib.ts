@@ -4,7 +4,7 @@ import { CommonStyleSchema } from './style-schema';
 type CommonProps = BoxProps | TouchableOpacityProps | TextProps;
 
 const transformStyle = (styles: CommonProps, theme: Theme) => {
-  const finalStyles = new Map<string, string>();
+  const finalStyles = new Map<string, string | number>();
 
   Object.entries(styles).forEach(([key, value]) => {
     if (key in CommonStyleSchema.shape && key !== 'testID') {
@@ -14,6 +14,8 @@ const transformStyle = (styles: CommonProps, theme: Theme) => {
         finalStyles.set(key, color ?? 'transparent');
       } else if (key === 'fontFamily' && typeof value === 'string') {
         finalStyles.set(key, theme.fonts[value as keyof Theme['fonts']]);
+      } else if (key === 'fontSize' && typeof value === 'string') {
+        finalStyles.set(key, theme.sizes[value as keyof Theme['sizes']]);
       } else {
         finalStyles.set(key, value as string);
       }
