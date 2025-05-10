@@ -1,4 +1,4 @@
-package com.reactnativetemplate
+package com.app.synced
 
 import android.app.Application
 import com.facebook.react.PackageList

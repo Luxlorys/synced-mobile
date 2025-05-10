@@ -1,5 +1,5 @@
 {
-  "name": "ReactNativeTemplate",
+  "name": "synced",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "husky": "husky",
-    "xcode:clean": "xcodebuild clean -workspace ios/ReactNativeTemplate.xcworkspace -scheme ReactNativeTemplate",
+    "xcode:clean": "xcodebuild clean -workspace ios/synced.xcworkspace -scheme synced",
     "typescript": "tsc --noEmit",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
