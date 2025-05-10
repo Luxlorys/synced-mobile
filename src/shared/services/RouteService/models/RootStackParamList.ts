@@ -7,7 +7,7 @@ export type RootStackParamList = {
   [Routes.AUTH_NAVIGATOR]: undefined;
   [Routes.WELCOME]: undefined;
   [Routes.SIGN_IN]: undefined;
-  [Routes.SIGN_UP_COMPANY_INFO]: undefined;
+  [Routes.SIGN_UP_COMPANY]: undefined;
   [Routes.SIGN_UP_ENTER_INVITE_CODE]: undefined;
   [Routes.SIGN_UP_MAIN]: undefined;
   [Routes.SIGN_UP_PARTICIPANT]: undefined;
