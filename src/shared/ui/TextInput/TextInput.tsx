@@ -93,8 +93,8 @@ const stylesheet = createStyleSheet(theme => ({
     paddingRight: isRightIconShown ? 44 : 16,
     color: theme.colors.white,
     fontFamily: theme.fonts.GilroyMedium,
-    fontSize: theme.sizes.m,
-    fontWeight: '500',
+    fontSize: theme.sizes.base,
+    fontWeight: '600',
   }),
   error: {
     color: theme.colors.red_500,

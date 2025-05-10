@@ -1,21 +1,27 @@
-import i18n from 'i18next';
 import { z } from 'zod';
 
 export const ErrorSchema = z.object({
   message: z.string(),
-  successful: z.boolean(),
-  status: z.string(),
-  data: z.null(),
+  statusCode: z.number(),
+  code: z.string(),
+  error: z.string(),
 });
 
+type ErrorType = {
+  response: {
+    data: {
+      message: string;
+      code: string;
+      statusCode: number;
+      error: string;
+    };
+  };
+};
+
 const errorResolver = (error: unknown) => {
-  const parsedError = ErrorSchema.safeParse(error);
+  const typedError = error as ErrorType;
 
-  if (parsedError.success) {
-    return parsedError.data.message;
-  }
-
-  return i18n.t('errors.server-unable');
+  return typedError.response.data.message;
 };
 
 export const ExceptionService = {

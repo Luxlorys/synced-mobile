@@ -40,13 +40,13 @@ export const ToastBase: FC<ToastBaseProps> = ({ type, title }) => {
       <Box flex={1} flexDirection="row" gap={8}>
         <Icon
           name={iconNames[type] as string}
-          size={20}
+          size={24}
           color={iconColors[type]}
         />
 
         <Box flex={1}>
           {!!title && (
-            <Text fontFamily="GilroyMedium" fontSize="m" color="white">
+            <Text fontFamily="GilroyMedium" fontSize="base" color="white">
               {title}
             </Text>
           )}

@@ -15,6 +15,8 @@ export const Welcome = () => {
 
   const handleSignIn = () => RouteService.navigate('SIGN_IN');
 
+  const handleSignUp = () => RouteService.navigate('SIGN_UP_MAIN');
+
   return (
     <Box flex={1}>
       <StatusBar />
@@ -68,6 +70,7 @@ export const Welcome = () => {
           variant="filled"
         />
         <Button
+          onPress={handleSignUp}
           marginTop={8}
           title="Create an account"
           type="primary"

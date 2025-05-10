@@ -7,10 +7,15 @@ export type RootStackParamList = {
   [Routes.AUTH_NAVIGATOR]: undefined;
   [Routes.WELCOME]: undefined;
   [Routes.SIGN_IN]: undefined;
-  [Routes.SIGN_UP_COMPANY]: undefined;
-  [Routes.SIGN_UP_ENTER_INVITE_CODE]: undefined;
+  [Routes.SIGN_UP_COMPANY]: {
+    email: string;
+    password: string;
+  };
   [Routes.SIGN_UP_MAIN]: undefined;
-  [Routes.SIGN_UP_PARTICIPANT]: undefined;
+  [Routes.SIGN_UP_PARTICIPANT]: {
+    email: string;
+    password: string;
+  };
 
   [Routes.BOTTOM_TAB_BAR_NAVIGATOR]: undefined;
 
@@ -27,4 +32,12 @@ export type RootStackParamList = {
   [Routes.ALERTS]: undefined;
 };
 
-export type SignInProp = RouteProp<RootStackParamList, 'PROFILE'>;
+export type SignUpCompanyRouteProp = RouteProp<
+  RootStackParamList,
+  'SIGN_UP_COMPANY'
+>;
+
+export type SignUpParticipantRouteProp = RouteProp<
+  RootStackParamList,
+  'SIGN_UP_PARTICIPANT'
+>;

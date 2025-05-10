@@ -10218,6 +10218,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-awesome-slider@npm:2.5.3":
+  version: 2.5.3
+  resolution: "react-native-awesome-slider@npm:2.5.3"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+    react-native-gesture-handler: ">=2.0.0"
+    react-native-reanimated: ">=3.0.0"
+  checksum: 10c0/a9c4c9f0ce631733c73df717b5149bc408b7a536e724384e44fdecd9d3b0e3315bc1f1a7b8e23efb6e7795f9f028b4b074c536a72989bd71804e6ed7da662e3f
+  languageName: node
+  linkType: hard
+
 "react-native-bootsplash@npm:6.3.3":
   version: 6.3.3
   resolution: "react-native-bootsplash@npm:6.3.3"
@@ -10287,6 +10299,15 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 10c0/02ad664662a529836aaae2f6bce5943ccd3193d33641e6328d1306e6cb82eb5d859c5f9975c557f6e6daf1ffb7e7f6cd8432dac70a727110bff887e554673c7c
+  languageName: node
+  linkType: hard
+
+"react-native-haptic-feedback@npm:^2.3.3":
+  version: 2.3.3
+  resolution: "react-native-haptic-feedback@npm:2.3.3"
+  peerDependencies:
+    react-native: ">=0.60.0"
+  checksum: 10c0/de65b6a0088cf8c14b6248eddb1275233c400a52f818eda640d1475ecaa38dc059b3c37fce7f0a0bd0c33c4e1fb7537bc31fed60e94d026638993dd5d916b35e
   languageName: node
   linkType: hard
 
@@ -11828,11 +11849,13 @@ __metadata:
     react-hook-form: "npm:7.54.2"
     react-i18next: "npm:15.0.2"
     react-native: "npm:0.76.7"
+    react-native-awesome-slider: "npm:2.5.3"
     react-native-bootsplash: "npm:6.3.3"
     react-native-config: "npm:1.5.5"
     react-native-date-picker: "npm:^5.0.12"
     react-native-device-info: "npm:14.0.4"
     react-native-gesture-handler: "npm:2.23.1"
+    react-native-haptic-feedback: "npm:^2.3.3"
     react-native-keyboard-controller: "npm:1.16.8"
     react-native-mmkv: "npm:3.2.0"
     react-native-modalfy: "npm:3.6.0"

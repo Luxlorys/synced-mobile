@@ -4,6 +4,7 @@ import React from 'react';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
 import { Box, Text, TouchableOpacity } from 'themes';
 import {
+  BaseHeader,
   Button,
   ControlledPasswordTextInput,
   ControlledTextInput,
@@ -18,6 +19,7 @@ export const SignIn = () => {
   return (
     <KeyboardAwareScrollView contentContainerStyle={styles.wrapper}>
       <Box flex={1}>
+        <BaseHeader />
         <Text
           color="white_80_opacity"
           fontWeight={600}
