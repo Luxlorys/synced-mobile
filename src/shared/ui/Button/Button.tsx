@@ -92,4 +92,8 @@ const stylesheet = createStyleSheet(theme => ({
     fontFamily: theme.fonts.GilroyMedium,
     fontWeight: 400,
   }),
+  loading: {
+    width: 70,
+    height: 70,
+  },
 }));

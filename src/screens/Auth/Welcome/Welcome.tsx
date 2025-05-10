@@ -1,18 +1,38 @@
 import { isIOS } from 'lib';
+import LottieView from 'lottie-react-native';
 import React from 'react';
 import {
   createStyleSheet,
   UnistylesRuntime,
   useStyles,
 } from 'react-native-unistyles';
-import { Box, Text } from 'themes';
-import { Button, KeyboardAwareScrollView } from 'ui';
+import { RouteService } from 'services';
+import { Animations, Box, Text } from 'themes';
+import { Button, StatusBar } from 'ui';
 
 export const Welcome = () => {
   const { styles } = useStyles(stylesheet);
 
+  const handleSignIn = () => RouteService.navigate('SIGN_IN');
+
   return (
-    <KeyboardAwareScrollView contentContainerStyle={styles.wrapper}>
+    <Box flex={1}>
+      <StatusBar />
+      <Box
+        paddingTop={isIOS ? UnistylesRuntime.insets.top : 16}
+        backgroundColor="dark_mode"
+        borderBottomLeftRadius={36}
+        paddingVertical={24}
+        borderBottomRightRadius={36}>
+        <Text
+          textAlign="center"
+          color="white_80_opacity"
+          fontWeight={500}
+          fontSize="lg"
+          fontFamily="GilroyRegular">
+          Manage your team effortlessly
+        </Text>
+      </Box>
       <Box
         flex={1}
         paddingHorizontal={16}
@@ -25,6 +45,12 @@ export const Welcome = () => {
           color="dark_mode">
           Welcome to Synced
         </Text>
+        <LottieView
+          source={Animations.ImpostorLoading}
+          autoPlay
+          loop
+          style={styles.animation}
+        />
       </Box>
       <Box
         paddingBottom={isIOS ? UnistylesRuntime.insets.bottom : 16}
@@ -36,6 +62,7 @@ export const Welcome = () => {
         justifyContent="center"
         paddingHorizontal={16}>
         <Button
+          onPress={handleSignIn}
           title="Alredy have an account? Sign In"
           type="primary"
           variant="filled"
@@ -47,13 +74,13 @@ export const Welcome = () => {
           variant="outline"
         />
       </Box>
-    </KeyboardAwareScrollView>
+    </Box>
   );
 };
 
-const stylesheet = createStyleSheet((_, runtime) => ({
-  wrapper: {
-    flexGrow: 1,
-    paddingTop: isIOS ? runtime.insets.top : 16,
+const stylesheet = createStyleSheet({
+  animation: {
+    height: 200,
+    width: 200,
   },
-}));
+});
