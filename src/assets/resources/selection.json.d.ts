@@ -1,5 +1,8 @@
 /** Generated with `./icons.sh` */
 export type IconName =
+  | 'calendar'
+  | 'monitor'
+  | 'search'
   | 'email'
   | 'message-square'
   | 'paper-plane'

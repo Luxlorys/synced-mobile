@@ -1,12 +1,12 @@
-export type TaskStatusEnum = 'TODO' | 'IN_PROGRESS' | 'DONE' | 'BLOCKED';
+export type TaskStatus = 'TODO' | 'IN_PROGRESS' | 'DONE' | 'BLOCKED';
 
-export type TaskPriorityEnum = 'LOW' | 'MEDIUM' | 'HIGH';
+export type TaskPriority = 'LOW' | 'MEDIUM' | 'HIGH';
 
 export interface CreateTaskBody {
   title: string;
   description: string;
-  priority: TaskPriorityEnum;
-  status: TaskStatusEnum;
+  priority: TaskPriority;
+  status: TaskStatus;
   estimatedTime: number;
   deadline: string;
 }
@@ -14,8 +14,8 @@ export interface CreateTaskBody {
 export interface GetTaskResponse {
   title: string;
   description: string;
-  priority: TaskPriorityEnum;
-  status: TaskStatusEnum;
+  priority: TaskPriority;
+  status: TaskStatus;
   estimatedTime: number;
   creator: {
     fullName: string;
@@ -27,9 +27,9 @@ export interface GetTaskResponse {
   };
   id: number;
   spentTime: number | null;
-  createdAt: Date;
-  lastUpdated: Date | null;
-  deadline: Date;
+  createdAt: string;
+  lastUpdated: string | null;
+  deadline: string;
 }
 
 export interface GetTasksRequest {
@@ -41,8 +41,8 @@ export interface DeleteTaskRequest extends GetTasksRequest {}
 export interface PathTaskRequest extends GetTasksRequest {
   title?: string;
   description?: string;
-  priority?: TaskPriorityEnum;
-  status?: TaskStatusEnum;
+  priority?: TaskPriority;
+  status?: TaskStatus;
   estimatedTime?: number;
   deadline?: string;
   spentTime?: number | null;
