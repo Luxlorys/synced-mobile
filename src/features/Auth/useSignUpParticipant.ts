@@ -2,6 +2,7 @@ import { useRoute } from '@react-navigation/native';
 import { useMutationEvents, useSignUpMutationAuthService } from 'api';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { SignUpParticipantRouteProp, ToastService } from 'services';
+import { useAuthStoreSelectors } from 'stores';
 import {
   SignUpParticipant,
   signUpParticipantFormResolver,
@@ -12,7 +13,14 @@ export const useSignUpParticipant = () => {
 
   const signUpMutation = useSignUpMutationAuthService();
 
-  const { control, handleSubmit } = useForm<SignUpParticipant>({
+  const setUser = useAuthStoreSelectors.use.setUser();
+  const setToken = useAuthStoreSelectors.use.setToken();
+
+  const {
+    control,
+    handleSubmit,
+    formState: { isValid },
+  } = useForm<SignUpParticipant>({
     resolver: signUpParticipantFormResolver,
     defaultValues: {
       inviteCode: '',
@@ -35,7 +43,8 @@ export const useSignUpParticipant = () => {
 
   useMutationEvents(signUpMutation, {
     onSuccess: data => {
-      console.log(data);
+      setToken(data.authentication);
+      setUser(data.user);
       ToastService.onSuccess({
         title: 'You were successfully registerd!',
       });
@@ -46,5 +55,6 @@ export const useSignUpParticipant = () => {
     control,
     handleSignUp: handleSubmit(handleSignUp),
     isPending: signUpMutation.isPending,
+    isValid,
   };
 };

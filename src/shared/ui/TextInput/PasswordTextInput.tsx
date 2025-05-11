@@ -25,8 +25,8 @@ export const ControlledPasswordTextInput = <FieldsType extends FieldValues>({
         <UITextInput
           value={value}
           secureTextEntry={isSecure}
-          rightIconName={isSecure ? 'eye' : 'eye_off'}
-          rightIconColor="white"
+          rightIconName={isSecure ? 'eye' : 'eye-off'}
+          rightIconColor="gray_400"
           rightIconSize={24}
           onRightPress={handleChangeSecure}
           onChangeText={val => onChange(val)}

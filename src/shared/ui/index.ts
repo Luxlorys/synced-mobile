@@ -18,3 +18,6 @@ export * from './Switch';
 export * from './Button';
 export * from './Slider';
 export * from './BaseHeader';
+export * from './OtpInput';
+export * from './Accordion';
+export * from './ExpandableInfoBlock';

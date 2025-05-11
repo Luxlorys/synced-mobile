@@ -49,7 +49,7 @@ const stylesheet = createStyleSheet(theme => ({
   container: (marginTop?: number) => ({
     width: '100%',
     marginTop,
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
   }),
   pinCodeContainer: {
     borderColor: theme.colors.white_40_opacity,

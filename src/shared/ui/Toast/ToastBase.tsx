@@ -32,6 +32,8 @@ export const ToastBase: FC<ToastBaseProps> = ({ type, title }) => {
       width={screenWidth - 32}
       borderRadius={4}
       padding={16}
+      borderWidth={1}
+      borderColor="white_10_opacity"
       alignItems="center"
       flexDirection="row"
       borderLeftWidth={8}
