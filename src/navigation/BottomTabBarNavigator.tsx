@@ -5,18 +5,23 @@ import { IconName } from 'react-native-vector-icons';
 import { Icon } from 'ui';
 import { Routes } from 'services';
 import { isIOS } from 'lib';
-import { TransitionSpecs } from '@react-navigation/bottom-tabs';
 import { Tab } from './lib';
 import { HomeNavigator, SettingsNavigator } from './tabs';
+import { MyTasksNavigator } from './tabs/MyTasksNavigator';
+import { NotificationsNavigator } from './tabs/NotificationsNavigator';
 
 const titles: Record<string, string> = {
   [Routes.MAIN_NAVIGATOR]: 'Home',
+  [Routes.MY_TASKS_NAVIGATOR]: 'My tasks',
+  [Routes.NOTIFICATIONS_NAVIGATOR]: 'Notifications',
   [Routes.SETTINGS_NAVIGATOR]: 'Settings',
 };
 
 const tabIcons: Record<string, IconName> = {
-  [Routes.MAIN_NAVIGATOR]: 'home',
-  [Routes.SETTINGS_NAVIGATOR]: 'filter',
+  [Routes.MAIN_NAVIGATOR]: 'menu',
+  [Routes.MY_TASKS_NAVIGATOR]: 'people',
+  [Routes.NOTIFICATIONS_NAVIGATOR]: 'bell',
+  [Routes.SETTINGS_NAVIGATOR]: 'settings',
 };
 
 export const BottomTabBarNavigator: React.FC = () => {
@@ -30,8 +35,6 @@ export const BottomTabBarNavigator: React.FC = () => {
         tabBarStyle: styles.tabBarStyle,
         tabBarItemStyle: styles.tabBarItemStyle,
         lazy: true,
-        animation: 'fade',
-        transitionSpec: TransitionSpecs.FadeSpec,
         tabBarLabel: ({ focused }) => (
           <Text
             fontSize="xs"
@@ -53,6 +56,11 @@ export const BottomTabBarNavigator: React.FC = () => {
       })}
       backBehavior="history">
       <Tab.Screen name="MAIN_NAVIGATOR" component={HomeNavigator} />
+      <Tab.Screen name="MY_TASKS_NAVIGATOR" component={MyTasksNavigator} />
+      <Tab.Screen
+        name="NOTIFICATIONS_NAVIGATOR"
+        component={NotificationsNavigator}
+      />
       <Tab.Screen name="SETTINGS_NAVIGATOR" component={SettingsNavigator} />
     </Tab.Navigator>
   );

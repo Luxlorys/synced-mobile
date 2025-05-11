@@ -1,10 +1,14 @@
 import { useMutationEvents, useSignInMutationAuthService } from 'api';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { RouteService } from 'services';
+import { useAuthStoreSelectors } from 'stores';
 import { signInFormResolver, SignInFormType } from './auth.features.models';
 
 export const useSignIn = () => {
   const signInMutation = useSignInMutationAuthService();
+
+  const setUser = useAuthStoreSelectors.use.setUser();
+  const setToken = useAuthStoreSelectors.use.setToken();
 
   const { control, handleSubmit } = useForm<SignInFormType>({
     resolver: signInFormResolver,
@@ -28,7 +32,8 @@ export const useSignIn = () => {
 
   useMutationEvents(signInMutation, {
     onSuccess: data => {
-      console.log(data);
+      setToken(data.authentication);
+      setUser(data.user);
     },
   });
 

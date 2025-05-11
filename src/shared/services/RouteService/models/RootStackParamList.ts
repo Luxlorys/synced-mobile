@@ -25,11 +25,13 @@ export type RootStackParamList = {
   [Routes.SETTINGS_NAVIGATOR]: undefined;
   [Routes.SETTINGS]: undefined;
 
+  [Routes.NOTIFICATIONS_NAVIGATOR]: undefined;
+  [Routes.NOTIFICATIONS]: undefined;
+
+  [Routes.MY_TASKS_NAVIGATOR]: undefined;
+  [Routes.MY_TASKS]: undefined;
+
   [Routes.AUTH]: undefined;
-
-  [Routes.PROFILE]: undefined;
-
-  [Routes.ALERTS]: undefined;
 };
 
 export type SignUpCompanyRouteProp = RouteProp<

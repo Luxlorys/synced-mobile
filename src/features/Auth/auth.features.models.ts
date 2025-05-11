@@ -53,7 +53,7 @@ export type SignUpAdmin = z.infer<typeof SignUpAdminSchema>;
 
 export const SignUpParticipantSchema = z.object({
   userFullName: z.string().min(5, 'Full name must have at leat 5 characters'),
-  inviteCode: z.string().length(4, ''),
+  inviteCode: z.string().min(4).max(4),
 });
 
 export const signUpParticipantFormResolver = zodResolver(

@@ -5,7 +5,7 @@ import { Box } from 'themes';
 import { StatusBar } from 'ui';
 import { UserInfoHeader } from 'widgets';
 
-export const Settings = () => {
+export const MyTasks = () => {
   return (
     <Box
       flex={1}

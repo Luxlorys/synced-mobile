@@ -28,7 +28,7 @@ export const UserRolePicker = ({
     const borderColor = interpolateColor(
       selection.value,
       [0, 1],
-      [theme.colors.transparent, theme.colors.primary_500],
+      [theme.colors.primary_500_opacity_20, theme.colors.primary_500],
     );
 
     const backgroundColor = interpolateColor(

@@ -1,63 +1,62 @@
 import { isIOS } from 'lib';
-import LottieView from 'lottie-react-native';
 import React from 'react';
-import {
-  createStyleSheet,
-  UnistylesRuntime,
-  useStyles,
-} from 'react-native-unistyles';
+import { UnistylesRuntime } from 'react-native-unistyles';
 import { RouteService } from 'services';
-import { Animations, Box, Text } from 'themes';
-import { Button, StatusBar } from 'ui';
+import { Box, Text } from 'themes';
+import { Button, ExpandableInfoBlock, StatusBar } from 'ui';
 
 export const Welcome = () => {
-  const { styles } = useStyles(stylesheet);
-
   const handleSignIn = () => RouteService.navigate('SIGN_IN');
 
   const handleSignUp = () => RouteService.navigate('SIGN_UP_MAIN');
 
   return (
-    <Box flex={1}>
+    <Box
+      flex={1}
+      backgroundColor="dark_mode"
+      paddingTop={isIOS ? UnistylesRuntime.insets.top : 16}>
       <StatusBar />
-      <Box
-        paddingTop={isIOS ? UnistylesRuntime.insets.top : 16}
-        backgroundColor="dark_mode"
-        borderBottomLeftRadius={36}
-        paddingVertical={24}
-        borderBottomRightRadius={36}>
+      <Box flex={1} paddingHorizontal={16}>
         <Text
-          textAlign="center"
-          color="white_80_opacity"
-          fontWeight={500}
-          fontSize="lg"
-          fontFamily="GilroyRegular">
-          Manage your team effortlessly
-        </Text>
-      </Box>
-      <Box
-        flex={1}
-        paddingHorizontal={16}
-        alignItems="center"
-        justifyContent="center">
-        <Text
+          marginTop={24}
           fontSize="title"
+          textAlign="center"
           fontWeight={600}
           fontFamily="GilroyMedium"
-          color="dark_mode">
+          color="white_80_opacity">
           Welcome to Synced
         </Text>
-        <LottieView
-          source={Animations.ImpostorLoading}
-          autoPlay
-          loop
-          style={styles.animation}
+        <ExpandableInfoBlock
+          expandedByDefaul
+          title="🧠 Smart Team Management"
+          reasons={[
+            'Empower your team without hiring extra managers. Assign tasks, track status, and keep everyone aligned with a few taps.',
+          ]}
+        />
+        <ExpandableInfoBlock
+          title="📊 Clear Insights & Reports"
+          reasons={[
+            'Understand team performance at a glance. Track task completion, spot delays, and measure productivity over time.',
+          ]}
+        />
+        <ExpandableInfoBlock
+          expandedByDefaul
+          title="💬 Built-in Communication"
+          reasons={[
+            'No more scattered messages. Discuss tasks, share updates, and request approvals—all within the app.',
+          ]}
+        />
+        <ExpandableInfoBlock
+          title="📅 Simple Yet Powerful Workflows"
+          reasons={[
+            'Stay organized with easy task flows, priorities, and dependencies. Keep projects moving without the complexity of big tools.',
+          ]}
         />
       </Box>
       <Box
         paddingBottom={isIOS ? UnistylesRuntime.insets.bottom : 16}
         paddingTop={24}
-        backgroundColor="dark_mode"
+        backgroundColor="dark_contrast"
         borderTopLeftRadius={36}
         borderTopRightRadius={36}
         alignItems="center"
@@ -80,10 +79,3 @@ export const Welcome = () => {
     </Box>
   );
 };
-
-const stylesheet = createStyleSheet({
-  animation: {
-    height: 200,
-    width: 200,
-  },
-});
