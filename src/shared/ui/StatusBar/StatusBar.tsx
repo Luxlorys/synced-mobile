@@ -8,7 +8,7 @@ import {
 interface StatusBarProps extends BaseProps {}
 
 export const StatusBar: React.FC<StatusBarProps> = ({
-  barStyle = 'dark-content',
+  barStyle = 'light-content',
   ...rest
 }) => {
   useStatusBar({});

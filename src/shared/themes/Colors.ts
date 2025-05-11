@@ -118,7 +118,9 @@ export const Colors = {
   dark_contrast: '#1E2529',
 
   primary_500: '#84CC16',
-  primary_500_opacity_40: 'rgba(217, 255, 133, 0.1)',
+  primary_500_opacity_40: 'rgba(217, 255, 133, 0.4)',
+  primary_500_opacity_20: 'rgba(217, 255, 133, 0.2)',
+  primary_500_opacity_10: 'rgba(217, 255, 133, 0.1)',
   brand_secondary: '#D9FF85',
   primary_disabled: '#5A772E',
 

@@ -16,3 +16,5 @@ export * from './Grabber';
 export * from './Delimiter';
 export * from './Switch';
 export * from './Button';
+export * from './Slider';
+export * from './BaseHeader';

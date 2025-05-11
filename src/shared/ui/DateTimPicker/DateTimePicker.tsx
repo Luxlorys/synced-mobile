@@ -49,7 +49,7 @@ export const UIDateTimePicker = ({
           {mode === 'date' && (
             <Text
               fontSize="base"
-              fontFamily="PoppinsMedium"
+              fontFamily="GilroyMedium"
               color={value ? 'white' : 'gray_400'}>
               {value ? getShortDateFormat(value) : placeholder}
             </Text>
@@ -57,12 +57,12 @@ export const UIDateTimePicker = ({
           {mode === 'time' && (
             <Text
               fontSize="base"
-              fontFamily="PoppinsMedium"
+              fontFamily="GilroyMedium"
               color={value ? 'white' : 'gray_400'}>
               {value ? getTimeFormat(value) : placeholder}
             </Text>
           )}
-          <Icon name="chevron_down" size={20} color="white" />
+          <Icon name="chevron-down" size={20} color="white" />
         </Box>
       </Pressable>
 

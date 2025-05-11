@@ -6,7 +6,6 @@ import { KeyboardProvider } from 'react-native-keyboard-controller';
 import { UnistylesRegistry, UnistylesProvider } from 'react-native-unistyles';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-import { Toaster } from 'sonner-native';
 import { ReducedMotionConfig, ReduceMotion } from 'react-native-reanimated';
 import { ModalProvider } from 'react-native-modalfy';
 import { queryClient } from 'api';
@@ -15,6 +14,7 @@ import { modalStack } from 'widgets';
 import { RootNavigator } from 'navigation';
 import { EventEmitterProvider } from 'providers';
 import { isDev } from 'lib';
+import { ToastMessage } from 'ui';
 
 if (isDev) {
   require('./ReactotronConfig');
@@ -39,7 +39,7 @@ export const App: React.FC = () => (
               </BottomSheetModalProvider>
             </ModalProvider>
           </QueryClientProvider>
-          <Toaster position="top-center" />
+          <ToastMessage />
         </SafeAreaProvider>
       </KeyboardProvider>
     </GestureHandlerRootView>

@@ -1,14 +1,31 @@
 import React from 'react';
-import { Auth } from 'screens';
 import { useStatusBar } from 'hooks';
+import {
+  SignIn,
+  SignUpCompany,
+  SignUpMain,
+  SignUpParticipant,
+  Welcome,
+} from 'screens';
+import { useStyles } from 'react-native-unistyles';
 import { Stack } from './lib';
 
 export const AuthNavigator: React.FC = () => {
+  const { theme } = useStyles();
+
   useStatusBar({});
 
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="AUTH" component={Auth} />
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        navigationBarColor: theme.colors.dark_mode,
+      }}>
+      <Stack.Screen name="WELCOME" component={Welcome} />
+      <Stack.Screen name="SIGN_IN" component={SignIn} />
+      <Stack.Screen name="SIGN_UP_MAIN" component={SignUpMain} />
+      <Stack.Screen name="SIGN_UP_COMPANY" component={SignUpCompany} />
+      <Stack.Screen name="SIGN_UP_PARTICIPANT" component={SignUpParticipant} />
     </Stack.Navigator>
   );
 };

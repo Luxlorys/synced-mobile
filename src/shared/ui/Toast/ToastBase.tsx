@@ -11,10 +11,10 @@ interface ToastBaseProps {
 }
 
 const iconNames: Record<ToastTypes, IconName> = {
-  success: 'done',
+  success: 'all-done',
   danger: 'close',
-  warning: 'alert',
-  info: 'alert',
+  warning: 'alert-triangle',
+  info: 'alert-triangle',
 };
 
 const iconColors: Record<ToastTypes, keyof typeof Colors> = {
@@ -40,13 +40,13 @@ export const ToastBase: FC<ToastBaseProps> = ({ type, title }) => {
       <Box flex={1} flexDirection="row" gap={8}>
         <Icon
           name={iconNames[type] as string}
-          size={20}
+          size={24}
           color={iconColors[type]}
         />
 
         <Box flex={1}>
           {!!title && (
-            <Text fontFamily="PoppinsMedium" fontSize="m" color="white">
+            <Text fontFamily="GilroyMedium" fontSize="base" color="white">
               {title}
             </Text>
           )}

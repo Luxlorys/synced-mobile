@@ -96,7 +96,7 @@ export const UICheckbox = ({
             entering={FadeIn.duration(200)}
             exiting={FadeOut.duration(200)}
             style={styles.box}>
-            <Icon name="done" size={18} color="dark_mode" />
+            <Icon name="checkmark" size={18} color="dark_mode" />
           </Animated.View>
         )}
       </Animated.View>

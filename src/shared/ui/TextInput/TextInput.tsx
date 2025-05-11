@@ -3,6 +3,7 @@ import { TextInput as BaseTextInput, TextInputProps } from 'react-native';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
 import { Box, Colors, Text, TouchableOpacity } from 'themes';
 import { Icon } from 'ui';
+import { IconName } from 'assets/resources/selection.json';
 import {
   constructBorderColor,
   constructHeight,
@@ -15,7 +16,7 @@ export interface Props extends TextInputProps {
   marginBottom?: number;
   marginTop?: number;
   borderRadius?: number;
-  rightIconName?: string;
+  rightIconName?: IconName;
   rightIconSize?: number;
   rightIconColor?: keyof typeof Colors;
   onRightPress?: () => void;
@@ -84,7 +85,6 @@ const stylesheet = createStyleSheet(theme => ({
     width: '100%',
     backgroundColor: theme.colors.white_10_opacity,
     borderWidth: 1,
-    // alignItems: 'center',
     borderColor: Colors[constructBorderColor(isFocused, isError)],
   }),
   textInput: (isRightIconShown: boolean) => ({
@@ -92,9 +92,9 @@ const stylesheet = createStyleSheet(theme => ({
     paddingLeft: 16,
     paddingRight: isRightIconShown ? 44 : 16,
     color: theme.colors.white,
-    fontFamily: theme.fonts.PoppinsMedium,
-    fontSize: theme.sizes.m,
-    fontWeight: '500',
+    fontFamily: theme.fonts.GilroyMedium,
+    fontSize: theme.sizes.base,
+    fontWeight: '600',
   }),
   error: {
     color: theme.colors.red_500,
@@ -109,6 +109,6 @@ const stylesheet = createStyleSheet(theme => ({
   },
   label: (isFocused: boolean, error: boolean) => ({
     color: Colors[constructLabelColor(isFocused, error)],
-    fontFamily: theme.fonts.PoppinsMedium,
+    fontFamily: theme.fonts.GilroyMedium,
   }),
 }));

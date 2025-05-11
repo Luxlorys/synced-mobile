@@ -92,3 +92,5 @@ merge-query-keys
 query-keys
 server-hooks
 update-index
+
+.env
