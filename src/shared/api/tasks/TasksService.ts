@@ -9,7 +9,7 @@ import {
   PathTaskRequest,
 } from './models';
 
-export const AuthService = createApi({
+export const TasksService = createApi({
   baseQuery,
   endpoints: builder => ({
     getAllTasks: builder.get<GetAllTasksResponse, void>({
