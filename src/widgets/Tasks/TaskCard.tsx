@@ -1,7 +1,7 @@
 import { GetTaskResponse } from 'api';
 import React from 'react';
 import { Box, TouchableOpacity, Text } from 'themes';
-import { getBasicDate } from 'lib';
+import { getAdvancedDateWithYearFormat } from 'lib';
 import { Icon } from 'ui';
 import { TaskStatusBadge } from './TaskStatusBadge';
 import { TaskPriorityBadge } from './TaskPriorityBadge';
@@ -13,6 +13,7 @@ interface TaskCardProps {
 export const TaskCard = ({ task }: TaskCardProps) => {
   return (
     <TouchableOpacity
+      backgroundColor="dark_contrast"
       marginTop={8}
       padding={16}
       borderRadius={12}
@@ -55,10 +56,16 @@ export const TaskCard = ({ task }: TaskCardProps) => {
             color="white"
             fontFamily="GilroyMedium"
             fontWeight={500}>
-            {getBasicDate(task.deadline)}
+            {getAdvancedDateWithYearFormat(task.deadline)}
           </Text>
         </Box>
       </Box>
+      <Text marginTop={16} fontSize="base" color="white">
+        Assigned to:{' '}
+        <Text textDecorationLine="underline" fontWeight={600}>
+          {task.assignedTo.fullName}
+        </Text>
+      </Text>
     </TouchableOpacity>
   );
 };

@@ -1,12 +1,16 @@
 import { isIOS } from 'lib';
 import React from 'react';
 import { UnistylesRuntime } from 'react-native-unistyles';
+import { RouteService } from 'services';
 import { TouchableOpacity } from 'themes';
 import { Icon } from 'ui';
 
 export const CreateNewTaskButton = () => {
+  const onCreatePress = () => RouteService.navigate('CREATE_TASK');
+
   return (
     <TouchableOpacity
+      onPress={onCreatePress}
       zIndex={999}
       position="absolute"
       width={50}

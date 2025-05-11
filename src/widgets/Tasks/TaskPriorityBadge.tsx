@@ -1,7 +1,7 @@
 import React from 'react';
 import { TaskPriority } from 'api';
 import { Box, Text } from 'themes';
-import { PRIORITY_EMOJI, PRIORITY_TEXT, PRIORITY_TEXT_COLOR } from './config';
+import { PRIORITY_EMOJI, PRIORITY_TEXT } from './config';
 
 interface PriorityBadgeProps {
   priority: TaskPriority;
@@ -12,7 +12,7 @@ export const TaskPriorityBadge = ({ priority }: PriorityBadgeProps) => {
     <Box flexDirection="row" alignItems="center" gap={4}>
       <Text fontSize="m">{PRIORITY_EMOJI[priority]}</Text>
       <Text
-        color={PRIORITY_TEXT_COLOR[priority]}
+        color="white"
         fontWeight={400}
         fontFamily="GilroyRegular"
         fontSize="base">

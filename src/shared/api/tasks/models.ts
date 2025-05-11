@@ -8,7 +8,8 @@ export interface CreateTaskBody {
   priority: TaskPriority;
   status: TaskStatus;
   estimatedTime: number;
-  deadline: string;
+  deadline: Date;
+  assignedToId: number;
 }
 
 export interface GetTaskResponse {
@@ -17,7 +18,7 @@ export interface GetTaskResponse {
   priority: TaskPriority;
   status: TaskStatus;
   estimatedTime: number;
-  creator: {
+  assignedTo: {
     fullName: string;
     email: string;
   };

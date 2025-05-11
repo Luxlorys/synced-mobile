@@ -21,7 +21,7 @@ export const TaskStatusBadge = ({ status }: PriorityBadgeProps) => {
       borderColor={STATUS_BORDER_COLOR[status]}>
       <Text fontSize="m">{STATUS_EMOJI[status]}</Text>
       <Text
-        color={STATUS_BORDER_COLOR[status]}
+        color="white"
         fontWeight={400}
         fontFamily="GilroyRegular"
         fontSize="base">

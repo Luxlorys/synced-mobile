@@ -30,7 +30,7 @@ export const STATUS_EMOJI: Record<TaskStatus, string> = {
 
 export const PRIORITY_TEXT_COLOR: Record<TaskPriority, Colors> = {
   HIGH: 'red_500',
-  LOW: 'white_20_opacity',
+  LOW: 'white',
   MEDIUM: 'primary_500_opacity_40',
 };
 
