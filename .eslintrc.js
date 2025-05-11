@@ -90,7 +90,7 @@ module.exports = {
     'no-unneeded-ternary': 'error',
     'require-await': 'error',
     'func-style': ['error', 'expression'],
-    'id-denylist': ['error', 'e', 'cb', 'item', 'i', 'err', 'el'],
+    'id-denylist': ['error', 'e', 'cb', 'i', 'err', 'el'],
     'padding-line-between-statements': [
       'error',
       { blankLine: 'always', prev: '*', next: 'return' },
@@ -298,6 +298,7 @@ module.exports = {
               'translations',
               'types',
               'ui',
+              'api',
             ],
             disallow: ['screens', 'navigation'],
             message:

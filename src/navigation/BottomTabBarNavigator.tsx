@@ -19,7 +19,7 @@ const titles: Record<string, string> = {
 
 const tabIcons: Record<string, IconName> = {
   [Routes.MAIN_NAVIGATOR]: 'menu',
-  [Routes.MY_TASKS_NAVIGATOR]: 'people',
+  [Routes.MY_TASKS_NAVIGATOR]: 'monitor',
   [Routes.NOTIFICATIONS_NAVIGATOR]: 'bell',
   [Routes.SETTINGS_NAVIGATOR]: 'settings',
 };

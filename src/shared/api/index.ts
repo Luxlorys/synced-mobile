@@ -1,5 +1,6 @@
 // This file is auto-generated. Do not modify manually.
 
+export * from './tasks';
 export * from './auth';
 export * from './lib';
 

@@ -49,6 +49,7 @@ export const UIDateTimePicker = ({
           {mode === 'date' && (
             <Text
               fontSize="base"
+              fontWeight={600}
               fontFamily="GilroyMedium"
               color={value ? 'white' : 'gray_400'}>
               {value ? getShortDateFormat(value) : placeholder}
@@ -57,12 +58,13 @@ export const UIDateTimePicker = ({
           {mode === 'time' && (
             <Text
               fontSize="base"
+              fontWeight={600}
               fontFamily="GilroyMedium"
               color={value ? 'white' : 'gray_400'}>
               {value ? getTimeFormat(value) : placeholder}
             </Text>
           )}
-          <Icon name="chevron-down" size={20} color="white" />
+          <Icon name="calendar" size={20} color="gray_400" />
         </Box>
       </Pressable>
 
@@ -93,12 +95,12 @@ const stylesheet = createStyleSheet(theme => ({
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
-    borderRadius: 10,
+    borderRadius: 8,
     borderWidth: 1,
     borderColor: Colors[constructBorderColor(value, error)],
     backgroundColor: theme.colors.white_10_opacity,
     paddingHorizontal: 18,
-    height: 48,
+    height: 50,
     marginVertical: 4,
   }),
   errorText: {

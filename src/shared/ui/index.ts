@@ -21,3 +21,4 @@ export * from './BaseHeader';
 export * from './OtpInput';
 export * from './Accordion';
 export * from './ExpandableInfoBlock';
+export * from './ItemPicker';

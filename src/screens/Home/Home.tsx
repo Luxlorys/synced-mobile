@@ -1,11 +1,21 @@
+import { useGetAllCompanyTasks } from 'features';
 import { isIOS } from 'lib';
+import LottieView from 'lottie-react-native';
 import React from 'react';
-import { UnistylesRuntime } from 'react-native-unistyles';
-import { Box } from 'themes';
-import { Button, StatusBar } from 'ui';
-import { UserInfoHeader } from 'widgets';
+import {
+  createStyleSheet,
+  UnistylesRuntime,
+  useStyles,
+} from 'react-native-unistyles';
+import { Animations, Box } from 'themes';
+import { StatusBar } from 'ui';
+import { UserInfoHeader, CreateNewTaskButton, TasksList } from 'widgets';
 
 export const Home = () => {
+  const { styles } = useStyles(stylesheet);
+
+  const { data, isLoading } = useGetAllCompanyTasks();
+
   return (
     <Box
       flex={1}
@@ -15,9 +25,26 @@ export const Home = () => {
       backgroundColor="dark_mode">
       <StatusBar />
       <UserInfoHeader />
-      <Box width={100} marginTop={24} alignSelf="flex-end">
-        <Button title="+ Task" type="primary" variant="outline" />
-      </Box>
+      <CreateNewTaskButton />
+      {isLoading || !data ? (
+        <Box flex={1} alignItems="center" justifyContent="center">
+          <LottieView
+            source={Animations.ImpostorLoading}
+            autoPlay
+            loop
+            style={styles.loading}
+          />
+        </Box>
+      ) : (
+        <TasksList tasks={data} />
+      )}
     </Box>
   );
 };
+
+const stylesheet = createStyleSheet({
+  loading: {
+    width: 150,
+    height: 150,
+  },
+});

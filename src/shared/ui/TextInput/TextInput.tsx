@@ -13,6 +13,7 @@ import {
 
 export interface Props extends TextInputProps {
   error?: string;
+  withError?: boolean;
   marginBottom?: number;
   marginTop?: number;
   borderRadius?: number;
@@ -38,6 +39,7 @@ export const UITextInput = ({
   placeholder = '',
   size = 'base',
   borderRadius = 8,
+  withError = true,
   label,
   multiline = false,
   ...rest
@@ -74,7 +76,7 @@ export const UITextInput = ({
           {...rest}
         />
       </Box>
-      {error && <Text style={styles.error}>{error}</Text>}
+      {error && withError && <Text style={styles.error}>{error}</Text>}
     </Box>
   );
 };

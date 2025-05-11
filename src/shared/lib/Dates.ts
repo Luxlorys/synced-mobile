@@ -22,6 +22,8 @@ export const DATE_FORMAT = 'MM/DD/YY';
 
 export const BASIC_FORMAT = 'YYYY-MM-DD h:mm A';
 
+export const DATE_STRING = 'YYYY-MM-DDTHH:mm:ss.SSS';
+
 export const DATE_TIME_FORMAT = 'MM/DD/YY [at] H:mm A';
 export const DATE_TIME_WEEKDAY_FORMAT = 'dddd [at] H:mm A';
 
@@ -34,6 +36,9 @@ export const getNowJSDate = () => dayjs().toDate();
 
 export const getTimeFormat = (date: string | Date) =>
   dayjs(date).format(TIME_FORMAT);
+
+export const getDateTimeStringUTC = (date: Date) =>
+  dayjs.utc(date).format(DATE_STRING);
 
 export const getDateFormat = (date: string) => {
   return dayjs(date).tz(timezoneIdentifier).format(DATE_FORMAT);

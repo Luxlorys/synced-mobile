@@ -8,4 +8,4 @@ export const constructBorderColor = (value: Date, error: boolean) =>
   })
     .with({ value: true, error: false }, () => 'dark_mode')
     .with({ error: true }, () => 'brand_orange')
-    .otherwise(() => 'dark_mode');
+    .otherwise(() => 'white_10_opacity');

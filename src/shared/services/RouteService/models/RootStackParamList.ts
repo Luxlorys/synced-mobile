@@ -21,6 +21,7 @@ export type RootStackParamList = {
 
   [Routes.MAIN_NAVIGATOR]: undefined;
   [Routes.HOME]: undefined;
+  [Routes.CREATE_TASK]: undefined;
 
   [Routes.SETTINGS_NAVIGATOR]: undefined;
   [Routes.SETTINGS]: undefined;
